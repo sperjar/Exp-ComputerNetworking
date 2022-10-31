@@ -1,50 +1,34 @@
 <script setup lang="ts">
-const name = $ref('')
-
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
 </script>
 
 <template>
-  <div>
-    <div i-carbon-campsite text-4xl inline-block />
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
-      </a>
-    </p>
-    <p>
-      <em text-sm op75>Opinionated Vite Starter Template</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      placeholder="What's your name?"
-      type="text"
-      autocomplete="false"
-      p="x-4 y-2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
-    </div>
-  </div>
+  <h1 text-3xl font-bold mb-12>
+    计算机网络实验代码
+  </h1>
+  <ol>
+    <li><span i-carbon-link /><a href="/hamming">实验二：海明编码</a></li>
+  </ol>
 </template>
+
+<style scoped>
+a {
+  @apply hover-text-teal-600 underline ;
+}
+
+ul {
+  @apply my-8
+}
+
+li {
+  @apply my-4;
+}
+
+li::before {
+  content: url();
+  margin-right: 0.5rem;
+}
+
+span {
+  @apply inline-block align-middle mx-1;
+}
+</style>

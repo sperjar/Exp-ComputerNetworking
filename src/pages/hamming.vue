@@ -219,7 +219,7 @@ function validate(): void {
 }
 
 label {
-  @apply inline-block w-32;
+  @apply inline-block w-24 text-left;
 }
 
 .value {

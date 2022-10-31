@@ -21,7 +21,7 @@ a {
 }
 
 ul {
-  @apply my-8
+  @apply my-8;
 }
 
 li {

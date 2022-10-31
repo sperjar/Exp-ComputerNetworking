@@ -7,6 +7,7 @@ enum ValidResult {
 
 const validResult = ref(ValidResult.Empty)
 const rawData = ref('')
+const rawPolyData = ref('')
 const encodingData = ref('')
 const decodingData = ref('')
 </script>
@@ -19,6 +20,10 @@ const decodingData = ref('')
     <div class="item">
       <label for="raw_data">原始数据</label>
       <input id="raw_data" v-model="rawData" class="value" type="text" pattern="[0|1]+">
+    </div>
+    <div class="item">
+      <label for="poly_data">生成多项式</label>
+      <input id="poly_dta" v-model="rawPolyData" class="value" type="text">
     </div>
     <div class="item">
       <label for="encoding_data">编码数据</label>

@@ -7,8 +7,14 @@
   </h1>
   <ol>
     <li>
+      <router-link to="/crc">
+        实验二：1. CRC 编码
+      </router-link>
+      <span i-carbon-link />
+    </li>
+    <li>
       <router-link to="/hamming">
-        实验二：海明编码
+        实验二：2. 海明编码
       </router-link>
       <span i-carbon-link />
     </li>
@@ -26,11 +32,6 @@ ul {
 
 li {
   @apply my-4;
-}
-
-li::before {
-  content: url();
-  margin-right: 0.5rem;
 }
 
 span {

@@ -7,16 +7,17 @@
   </h1>
   <ol>
     <li>
-      <span i-carbon-link /><router-link to="/hamming">
+      <router-link to="/hamming">
         实验二：海明编码
       </router-link>
+      <span i-carbon-link />
     </li>
   </ol>
 </template>
 
 <style scoped>
 a {
-  @apply hover-text-teal-600 underline ;
+  @apply hover-text-teal-600 underline;
 }
 
 ul {

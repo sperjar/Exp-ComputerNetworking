@@ -135,7 +135,7 @@ function hammingValidating(_decodingData: string): number {
   }
 
   // check error
-  const errorCode = parseInt(validateCode.join(''), 2)
+  const errorCode = parseInt(validateCode.reverse().join(''), 2)
   validResult.value = errorCode === 0 ? ValidResult.Valid : ValidResult.Invalid
   return errorCode
 }

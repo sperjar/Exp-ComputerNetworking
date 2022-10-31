@@ -6,7 +6,11 @@
     计算机网络实验代码
   </h1>
   <ol>
-    <li><span i-carbon-link /><a href="/hamming">实验二：海明编码</a></li>
+    <li>
+      <span i-carbon-link /><router-link to="/hamming">
+        实验二：海明编码
+      </router-link>
+    </li>
   </ol>
 </template>
 

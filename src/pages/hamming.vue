@@ -192,7 +192,7 @@ function validate(): void {
     </div>
     <div class="item">
       <label for="decoding_data">解码数据</label>
-      <input id="decoding_data" v-model="decodingData" class="value" type="text" pattern="[0|1]+" readonly="true" pointer-events-none>
+      <input id="decoding_data" v-model="decodingData" class="value" type="text" pattern="[0|1]+">
     </div>
     <div class="item">
       <div v-if="validResult === ValidResult.Empty" mx-auto text-2xl bg-gray-400 i-carbon-unknown />

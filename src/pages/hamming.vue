@@ -102,7 +102,7 @@ function hammingValidating(_decodingData: string): number {
   // r: parity bit length
   // n: total length
   const n = _decodingData.length
-  const r = Math.floor(Math.log2(n + 1))
+  const r = Math.ceil(Math.log2(n + 1))
 
   // calculate parity bits
   // judge whether the bit is to be calculated
@@ -136,7 +136,6 @@ function hammingValidating(_decodingData: string): number {
 
   // check error
   const errorCode = parseInt(validateCode.reverse().join(''), 2)
-  validResult.value = errorCode === 0 ? ValidResult.Valid : ValidResult.Invalid
   return errorCode
 }
 
@@ -151,14 +150,29 @@ function encode(): void {
 }
 
 function decode(): void {
-  decodingData.value = hammingDecoding(encodingData.value)
+  const errorCode = hammingValidating(encodingData.value)
+  if (errorCode === 0) {
+    validResult.value = ValidResult.Valid
+    decodingData.value = hammingDecoding(encodingData.value)
+  }
+  else {
+    validResult.value = ValidResult.Invalid
+    const errorBit = errorCode - 1
+    const data = encodingData.value.split('').map(x => parseInt(x))
+    data[errorBit] = (data[errorBit] + 1) % 2
+    decodingData.value = hammingDecoding(data.join(''))
+  }
 }
 
 function validate(): void {
   const errorCode = hammingValidating(encodingData.value)
   if (errorCode !== 0) {
+    validResult.value = ValidResult.Invalid
     alert(`校验失败，错误位为${errorCode}`)
     throw new Error(`校验失败，错误位为${errorCode}`)
+  }
+  else {
+    validResult.value = ValidResult.Valid
   }
 }
 </script>

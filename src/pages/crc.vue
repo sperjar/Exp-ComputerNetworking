@@ -106,11 +106,11 @@ function decode(): void {
   <div my-8>
     <div class="item">
       <label for="raw_data">原始数据</label>
-      <input id="raw_data" v-model="rawData" class="value" type="text" pattern="[0|1]+">
+      <input id="raw_data" v-model="rawData" class="value" type="text" pattern="[0|1]+" placeholder="1010101">
     </div>
     <div class="item">
       <label for="poly_data">生成多项式</label>
-      <input id="poly_dta" v-model="rawPolyData" class="value" type="text" pattern="1[0|1]*1|1">
+      <input id="poly_dta" v-model="rawPolyData" class="value" type="text" pattern="1[0|1]*1|1" placeholder="1011">
     </div>
     <div class="item">
       <label for="encoding_data">编码数据</label>
@@ -137,6 +137,13 @@ function decode(): void {
       解码
     </button>
   </div>
+
+  <p max-w-80 mx-auto text-sm leading-relaxed>
+    <strong>提示：</strong>
+    所有输入和输出数据均为二进制形式，且不包含空格；
+    生成多项式为系数的降幂排列，例如生成多项式<code>x^3 + x + 1</code>的二进制表示为<code>1011</code>，且第一位和最后一位必须为<code>1</code>；
+    CRC编码仅能校验单位数据错误，不能纠正错误，点击校验按钮检测编码后数据是否有误，点击解码按钮可以在校验通过的情况下解码出原始数据。
+  </p><br>
 </template>
 
 <style scoped>

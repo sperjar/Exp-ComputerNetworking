@@ -184,7 +184,7 @@ function validate(): void {
   <div my-8>
     <div class="item">
       <label for="raw_data">原始数据</label>
-      <input id="raw_data" v-model="rawData" class="value" type="text" pattern="[0|1]+">
+      <input id="raw_data" v-model="rawData" class="value" type="text" pattern="[0|1]+" placeholder="1010101">
     </div>
     <div class="item">
       <label for="encoding_data">编码数据</label>
@@ -211,6 +211,12 @@ function validate(): void {
       解码
     </button>
   </div>
+
+  <p max-w-80 mx-auto text-sm leading-relaxed>
+    <strong>提示：</strong>
+    所有输入和输出数据均为二进制形式，且不包含空格；
+    海明编码可以检测并纠正单个错误位，点击校验按钮可以检测单个错误位，点击解码按钮可以检测错误位并纠正解码。
+  </p><br>
 </template>
 
 <style scoped>
